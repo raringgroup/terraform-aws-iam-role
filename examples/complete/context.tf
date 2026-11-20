@@ -21,8 +21,8 @@
 #
 
 module "this" {
-  source  = "cloudposse/label/null"
-  version = "0.25.0" # requires Terraform >= 0.13.0
+  # Modified from upstream: uses the Raring Group terraform-null-context instead of cloudposse/label/null.
+  source = "git::https://github.com/raringgroup/terraform-null-context.git?ref=v0.1.0"
 
   enabled             = var.enabled
   namespace           = var.namespace
