@@ -4,6 +4,9 @@ Copyright 2026 Raring Group LLC
 This product includes software developed by Raring Group LLC (https://github.com/raringgroup).
 
 Portions of this software are derived from terraform-aws-iam-role (https://github.com/cloudposse/terraform-aws-iam-role),
-Copyright 2017-2022 Cloud Posse, LLC, licensed under the Apache License, Version 2.0.
-The file _context.tf (and examples/*/_context.tf) is derived from terraform-null-label (https://github.com/cloudposse/terraform-null-label), Copyright 2020 Cloud Posse, LLC.
-Modifications by Raring Group LLC: re-sourced the context module from the Cloud Posse label module to the Raring Group context module (terraform-null-context); copyright and license headers updated.
+Copyright 2019-2020 Cloud Posse, LLC, licensed under the Apache License, Version 2.0.
+The file _context.tf (and examples/*/_context.tf) is derived from terraform-null-label (https://github.com/cloudposse/terraform-null-label), Copyright 2017-2020 Cloud Posse, LLC.
+Modifications by Raring Group LLC (relative to terraform-aws-iam-role 0.19.0):
+- Replaced the Cloud Posse null-label context with the Raring Group context module (terraform-null-context); the internal role_name label module was removed.
+- Added the assume_role_policy_document_override, in_line_policies and tags_enabled variables; removed the policy_name variable.
+- Renamed examples/complete/context.tf to _context.tf and updated the examples to the Raring Group context.
