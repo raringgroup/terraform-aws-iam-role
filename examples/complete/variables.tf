@@ -1,8 +1,3 @@
-variable "region" {
-  type        = string
-  description = "AWS region"
-}
-
 variable "use_fullname" {
   type        = bool
   description = "Set 'true' to use `namespace-stage-name` for ecr repository name, else `name`"

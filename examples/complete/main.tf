@@ -1,5 +1,5 @@
 locals {
-  enabled = module.this.enabled
+  enabled = module.context.enabled
 }
 
 provider "aws" {
@@ -14,7 +14,7 @@ module "kms_key" {
   deletion_window_in_days = 7
   enable_key_rotation     = false
 
-  context = module.this.self
+  context = module.context.self
 }
 
 module "bucket" {
@@ -29,7 +29,7 @@ module "bucket" {
   sse_algorithm                = "aws:kms"
   kms_master_key_arn           = module.kms_key.key_arn
 
-  context = module.this.self
+  context = module.context.self
 }
 
 data "aws_iam_policy_document" "resource_full_access" {
@@ -86,5 +86,5 @@ module "role" {
   policy_description    = "Test IAM policy"
   role_description      = "Test IAM role"
 
-  context = module.this.self
+  context = module.context.self
 }
