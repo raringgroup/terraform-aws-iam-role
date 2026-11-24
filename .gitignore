@@ -12,3 +12,8 @@
 # Build harness files
 .build-harness
 build-harness
+
+# OS / Terraform misc
+.DS_Store
+crash.log
+.terraform.lock.hcl

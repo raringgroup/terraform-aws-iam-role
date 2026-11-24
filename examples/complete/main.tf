@@ -26,8 +26,7 @@ provider "aws" {
 }
 
 module "kms_key" {
-  source  = "cloudposse/kms-key/aws"
-  version = "0.12.1"
+  source = "git::https://github.com/raringgroup/terraform-aws-kms-key.git?ref=v0.1.0"
 
   description             = "Test KMS key"
   deletion_window_in_days = 7
@@ -37,9 +36,7 @@ module "kms_key" {
 }
 
 module "bucket" {
-  # any version greater than 0.47.0 will require the root module to have required_version >= 1.0 in its versions.tf
-  source  = "cloudposse/s3-bucket/aws"
-  version = "0.47.0"
+  source = "git::https://github.com/raringgroup/terraform-aws-s3-bucket.git?ref=v0.1.0"
 
   user_enabled                 = false
   versioning_enabled           = false
